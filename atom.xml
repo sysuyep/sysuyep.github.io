@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://www.wzq.life</id>
-    <title>Gridea</title>
-    <updated>2019-11-06T09:52:34.457Z</updated>
+    <id>https://www.wzq.life</id>
+    <title>小吴同学的绿洲</title>
+    <updated>2019-11-06T10:13:30.603Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://www.wzq.life"/>
-    <link rel="self" href="http://www.wzq.life/atom.xml"/>
+    <link rel="alternate" href="https://www.wzq.life"/>
+    <link rel="self" href="https://www.wzq.life/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>http://www.wzq.life/images/avatar.png</logo>
-    <icon>http://www.wzq.life/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <logo>https://www.wzq.life/images/avatar.png</logo>
+    <icon>https://www.wzq.life/favicon.ico</icon>
+    <rights>All rights reserved 2019, 小吴同学的绿洲</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://www.wzq.life/post/hello-gridea</id>
-        <link href="http://www.wzq.life/post/hello-gridea">
+        <id>https://www.wzq.life/post/hello-gridea</id>
+        <link href="https://www.wzq.life/post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
