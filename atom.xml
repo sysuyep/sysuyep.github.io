@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sysuyep.github.io</id>
     <title>小吴同学的绿洲</title>
-    <updated>2019-11-23T12:32:29.597Z</updated>
+    <updated>2019-11-23T12:33:14.811Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sysuyep.github.io"/>
     <link rel="self" href="https://sysuyep.github.io/atom.xml"/>
@@ -10,15 +10,6 @@
     <logo>https://sysuyep.github.io/images/avatar.png</logo>
     <icon>https://sysuyep.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 小吴同学的绿洲</rights>
-    <entry>
-        <title type="html"><![CDATA[北京闲逛指南（篇2）]]></title>
-        <id>https://sysuyep.github.io/post/bei-jing-xian-guang-zhi-nan-pian-2</id>
-        <link href="https://sysuyep.github.io/post/bei-jing-xian-guang-zhi-nan-pian-2">
-        </link>
-        <updated>2019-11-23T12:30:53.000Z</updated>
-        <content type="html"><![CDATA[<p>这篇为测试CDN</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[北京闲逛指南（篇2）]]></title>
         <id>https://sysuyep.github.io/post/bjxgzn2</id>
