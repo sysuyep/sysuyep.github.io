@@ -2,18 +2,154 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sysuyep.github.io</id>
     <title>小吴同学的绿洲</title>
-    <updated>2019-11-23T18:18:15.566Z</updated>
+    <updated>2020-03-23T06:42:06.791Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sysuyep.github.io"/>
     <link rel="self" href="https://sysuyep.github.io/atom.xml"/>
     <subtitle>步履不停</subtitle>
     <logo>https://sysuyep.github.io/images/avatar.png</logo>
     <icon>https://sysuyep.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, 小吴同学的绿洲</rights>
+    <rights>All rights reserved 2020, 小吴同学的绿洲</rights>
+    <entry>
+        <title type="html"><![CDATA[GitHub搭建个人网站教程]]></title>
+        <id>https://sysuyep.github.io/post/xiao-bai-da-jian-ge-ren-wang-zhan-zhi-nan/</id>
+        <link href="https://sysuyep.github.io/post/xiao-bai-da-jian-ge-ren-wang-zhan-zhi-nan/">
+        </link>
+        <updated>2019-11-23T18:18:41.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>在互联网愈加封闭的环境下以及处处<s>404</s>的时代，搭建个人网站成为了一个相对自由的选择，一个微弱的抗议。</p>
+<p>为什么选择GitHub？一是免费，无需增加服务器的费用支出；二是无需备案。本文将完整介绍利用GitHub搭建个人网站的流程，包括域名购买、GitHub Pages设置、域名解析、博客客户端设置、文本编辑器使用、图床设置和其他优化工具。</p>
+<p>我们将使用的软件、工具或者网站包括：NameSilo、GitHub、DNSPod、Gridea、Markdown、jsDelivr、PicGo、Markdown Nice等。整个过程几乎是“描红”式操作，当然第一次上手难免会遇到各种意外问题，如果本文没有给你解答，那么请善用搜索引擎。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>在互联网愈加封闭的环境下以及处处<s>404</s>的时代，搭建个人网站成为了一个相对自由的选择，一个微弱的抗议。</p>
+<p>为什么选择GitHub？一是免费，无需增加服务器的费用支出；二是无需备案。本文将完整介绍利用GitHub搭建个人网站的流程，包括域名购买、GitHub Pages设置、域名解析、博客客户端设置、文本编辑器使用、图床设置和其他优化工具。</p>
+<p>我们将使用的软件、工具或者网站包括：NameSilo、GitHub、DNSPod、Gridea、Markdown、jsDelivr、PicGo、Markdown Nice等。整个过程几乎是“描红”式操作，当然第一次上手难免会遇到各种意外问题，如果本文没有给你解答，那么请善用搜索引擎。</p>
+</blockquote>
+<!-- more -->
+<h2 id="引子一个比喻">引子：一个比喻</h2>
+<p>如果我们将搭建网站比喻为房子，域名就相当于门牌地址，GitHub Pages就是承载房子的地皮和地基，有了这两样我们才能用钢筋水泥建设和装修房子（使用Gridea之类的博客框架完善网站）。域名解析就是引路人，相当于将带有文字的地址与纯数字的经纬度对应，它将域名（比如www.abc.com）转换为IP地址（比如114.114.114.114），以便让计算机用他们能够理解的语言帮你找到正确的网站。文本编辑器、图床等内容，则是为了让你能够更加高效、便利地创造内容。</p>
+<h2 id="一-域名购买及域名服务转移">一、 域名购买及域名服务转移</h2>
+<p>如果用GitHub搭建个人网站，其实并不一定需要买域名，但是为了流程完整性，还是将买域名作为建站的第一步。域名注册商有很多，比如GoDaddy、Namecheap、name.com等等，本文以NameSilo为例，介绍一下购买流程。<br>
+Step 1:<br>
+注册登录之后，在搜索栏中输入你想购买的域名，然后点击搜索。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B01.png" alt="" loading="lazy"><br>
+Step 2：<br>
+查看可购买的域名，如果显示橙色“Registered”，则表示该域名已被别人占有，绿色为可购买。勾选想要的域名后点击“register checked domains”。有些域名会显示两个价格，一般便宜的价格都是指第一年的费用，而有删除线的价格（比如<s>＄16.99</s>）则是后续续费的价格，所以不要看第一年哪个便宜就买哪个。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B02.png" alt="" loading="lazy"><br>
+Step 3:<br>
+确认订单。如果决定长期使用，Auto-Renew（自动续费）可以选择 Yes。Set all years选择注册时长，但是如果是按促销价购买，只能选择一年。Privacy Setting中建议选择免费赠送的WHOIS隐私保护。然后点击支付金额下方的<strong>Continue</strong>进入下一步。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B03.png" alt="" loading="lazy"><br>
+Step 4：<br>
+选择支付宝或者其他支付方式。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B04.png" alt="" loading="lazy"><br>
+Step 5:<br>
+为了提升域名解析速度，我们接下来要将NameSilo默认的域名服务器转移至DNSPOD（腾讯云）。首先在dnspod.cn注册账户，然后进入控制台管理界面。点击<strong>DNS管理</strong>下的<strong>我的域名</strong>，然后选择<strong>添加域名</strong>。填入我们在NameSilo购买的域名，点击确认。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D5.png" alt="" loading="lazy"><br>
+Step 6:<br>
+点击生成的域名进入跳转界面，我们可以在上方发现一条提醒：“请在域名注册商处将 DNS 服务器修改为……”，复制文本中提到的<mark>f1g1ns1.dnspod.net</mark>和<mark>f1g1ns2.dnspod.net</mark>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B06.png" alt="" loading="lazy"><br>
+Step 7:<br>
+然后我们回到NameSilo进入<strong>My Account</strong>,点击右上角的<strong>Manage My Domains</strong>，勾选我们购买的域名，然后点击选项栏中的<strong>Change Nameservers</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D7.png" alt="" loading="lazy"><br>
+进入跳转页面后，将刚刚在DNSPOD复制的两个地址分别填入<strong>NameServer 1</strong>和<strong>NameServer 2</strong>中。删除其他记录，然后点击<strong>SUBMIT</strong>。然后等待DNS服务器刷新（最多72小时，一般十几分钟也可完成），等待的这段时间内我们先去设置GitHub Pages。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B07-2.png" alt="" loading="lazy"></p>
+<h2 id="二-github-pages-设置">二、Github Pages 设置</h2>
+<p>Step 1:<br>
+注册GitHub个人账户，进入个人主页界面后，点击左边栏上方的<strong>New</strong>，新建一个Repository（仓库）。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub1.png" alt="" loading="lazy"><br>
+Step 2:<br>
+跳转页面之后，在<strong>Repository name</strong>处填写域名，格式是<mark>username.github.io</mark>，username就是你注册GitHub的用户名。<strong>Description</strong>随便填，选择<strong>Public</strong>，勾选<strong>Initialize this repository with a README</strong>，点击下方的<strong>Create repository</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/snipaste_20200323_132610.png" alt="" loading="lazy"><br>
+Step 3:<br>
+跳转页面之后，点击<strong>Settings</strong>，接着往下滚动页面找到<strong>GitHub Pages</strong>。然后点击<strong>Choose a theme</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3-2.png" alt="" loading="lazy"><br>
+跳转页面后随便选择一个模板（后面我们会用Gridea来搭建更加美观的网站）。这时一个最简陋的网站就建好了，GitHub自动跳转回Settings界面，这时我们看GitHub Pages下面会显示<mark>Your site is published at username.github.io</mark>。这时你在浏览器输入这个域名，就能 看到你的网站雏形啦。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3-3.png" alt="" loading="lazy"></p>
+<h2 id="三-域名解析">三、域名解析</h2>
+<p>Step 1:<br>
+设置完Github Pages后，就需要让我们的域名地址都能够被他人正常访问。首先打开电脑本地的Git Bash或者cmd命令行控制台，输入<mark>ping username.github.io</mark>后回车（username即你的GitHub用户名），复制返回结果中的IP地址。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%901.png" alt="" loading="lazy"><br>
+Step 2：<br>
+进入DNSPOD的控制台，点击<strong>我的域名</strong>中此前设置的域名，跳转页面后点击<strong>添加记录</strong>。这里我们要填写两条，以保证在输入域名时无论是否添加www，人们都可以访问你的网站。<br>
+第一条的主机记录填==@== ，记录类型选择<mark>A</mark>，线路类型默认，记录值填写上一步获得的IP地址。<br>
+第二条的主机记录填<mark>WWW</mark>，记录类型选择<mark>CNAME</mark>，线路类型默认，记录值填写<mark>username.github.io</mark>（username为你的GitHub用户名），点击确认。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%902.png" alt="" loading="lazy"><br>
+Step 3：<br>
+打开GitHub，点击之前建立的仓库（username.github.io），然后选择<strong>Settings</strong> ,下拉到<strong>GitHub Pages</strong>版块，在<strong>Custom Domain</strong>中填入你在NameSilo上购买的域名，然后点击保存。经过一定时间的等待（我也不知道多久），GitHub Pages将显示<mark>Your site is published at abc.com</mark> （abc.com指代你购买的个人域名）。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%903.png" alt="" loading="lazy"></p>
+<h2 id="四-使用gridea构建网站">四、使用Gridea构建网站</h2>
+<blockquote>
+<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
+</blockquote>
+<p>Step 1：<br>
+进入官网gridea.dev下载客户端，在等待下载安装的过程中我们需要先去GitHub设置一个Token。点击GitHub右上角的头像，再点击<strong>Settings</strong>，在左侧边栏选择最下方的<strong>Developer settings</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea2.png" alt="" loading="lazy"><br>
+跳转界面后，点击<strong>Personal access tokens</strong>，然后点击右上角的<strong>Generate new token</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea5.png" alt="" loading="lazy"><br>
+Step 2:<br>
+<strong>Note</strong>处的内容可以随便填，比如写Personal Website。在其下方面有很长一堆东西，你只需勾选第一个<strong>repo</strong>即可，然后拉到页面最下方点击<strong>Generate token</strong>。跳转页面之后，复制那一长串字符。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea4.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea5.png" alt="" loading="lazy"><br>
+Step 3:<br>
+打开安装完成的Gridea客户端，点击左边栏的<strong>远程</strong>。</p>
+<ul>
+<li><strong>平台</strong>选择GitHub Pages。</li>
+<li><strong>域名</strong>填写你的GitHub域名（username.github.io）。</li>
+<li><strong>仓库名称</strong>即你在GitHub上建立的仓库名称，一般为username.github.io。</li>
+<li><strong>分支</strong>填master。</li>
+<li><strong>仓库用户名</strong>为你的GitHub用户名。</li>
+<li><strong>邮箱</strong>一般填你注册GitHub时的邮箱。</li>
+<li><strong>令牌</strong>填写我们上一步复制的Token。</li>
+<li><strong>CNAME</strong>填写你在NaseSilo上购买的自定义域名。<br>
+填写完之后点击<strong>检测远程连接</strong>，如果提示 「远程连接成功」则证明设置成功，点击<strong>保存</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/Gridea6.png" alt="" loading="lazy"><br>
+Step 4：<br>
+点击侧边栏<strong>主题</strong>，我们可以对网站界面进行配置。在<strong>选择主题</strong>中，可以点击右侧<mark>∨</mark>查看更多主题，在线主题市场也有更多主题可以选择。网站名称等细节配置请自行摸索，或者参考<a href="https://gridea.dev/docs/">官方文档</a>。全部设置完毕之后点击左下方的<strong>同步</strong>，就可将新网站推向全世界了。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/Gridea7.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200323142750.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="五-优化及效率提升">五、优化及效率提升</h2>
+<h3 id="1写作">1.写作</h3>
+<p>Gridea文章编辑器使用了<strong>Markdown</strong>语言，这也是我推荐你熟悉并使用的一种写作方式。Markdown是一种轻量级标记语言，用语法来代替常见的排版格式，能够让你专注内容而非排版。并且借助一些工具，你的文章无需耗费过大力气，就能高效地迁移至微信公众号等各类平台中。除了Gridea自带的文章编辑器，PC上你还可以使用<strong>Typora</strong>作为日常写作工具。</p>
+<h3 id="2图床">2.图床</h3>
+<p>图床是专门存储图片的网络服务器，将图片上传至图床即可通过外链访问，配合Markdown语法<code>![](图床链接地址)</code> 我们可以很方便的在文内插入图片。将文章搬至其他平台时，也无需重复上传图片，极大节约了时间。</p>
+<h3 id="3picgo图片上传及管理工具">3.PicGo：图片上传及管理工具</h3>
+<p>PicGo支持了多种图床，包括七牛图床、腾讯云COS、又拍云、GitHub、SM.MS、阿里云OSS、Imgur等，通过其他开发者制作的插件，PicGo还能支持Gitee等其他图床。这里以GitHub为例，介绍一下PicGo的使用技巧。<br>
+首先我们按照前文的方式，在GitHub新建一个Repository并重新生成一个Token。然后打开PicGo客户端，在左边栏图床设置中点击<strong>GitHub图床</strong>。</p>
+<ul>
+<li><strong>设定仓库名</strong>的格式是<mark>GitHub用户名/刚刚新建的仓库名</mark>，例如sysuyep/ImageHosting。</li>
+<li><strong>设定分支名</strong>填写master。</li>
+<li><strong>设定Token</strong>填写你刚刚获取的Token。</li>
+<li><strong>存储路径</strong>是指你计划把图片放在仓库什么位置，一般可填img/。</li>
+<li><strong>自定义域名</strong>这里我们可以用<mark>jsDelivr</mark>进行配置，以便增加访问GitHub图床的速度。可以设置为<mark>https://cdn.jsdelivr.net/gh/用户名/仓库名</mark>，设置完成后点击确定。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo1.png" alt="" loading="lazy"><br>
+在上传区我们将链接格式选择为<strong>Markdown</strong>，选择一张图片上传完成之后，你就可以将该图片外链以Markdown的格式复制粘贴至文本内。比如：<br>
+<code>![](https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo2.png)</code><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo2.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="4图片压缩">4.图片压缩</h3>
+<p>图片过大不仅占用GitHub仓库空间而且影响访问的加载速度，因此对图片进行合理的压缩是必要的。在线图片压缩处理网站已经有很多了，比如<a href="https://docsmall.com/">docsmall</a>、<a href="https://tinypng.com/">Tinypng</a>等。<br>
+本文主要介绍一种本地处理工具<strong>utools</strong>，准确地说它是一个工具集合产品。在[官网]（https://u.tools/index.html）下载安装后打开插件管理，可以发现其分门别类了不同功能的插件，大家可以根据自己需要安装，这里我以<strong>压缩图片</strong>为例介绍一下其使用方法。首先在左边栏点击<strong>图片</strong>，点击图片压缩右侧的图标下载，安装之后我们可以在<strong>已安装</strong>中查看插件的使用介绍。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A91.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A92.png" alt="" loading="lazy"><br>
+这时我们只要使用快捷键<mark>Alt+Space</mark>就可快速唤出操作框，将想要压缩的图片拖进操作框，在弹出插件列表中选中<strong>图片压缩</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A93.png" alt="" loading="lazy"><br>
+在跳转界面中，我们可以在左下方选择<strong>本地压缩</strong>或者<strong>通过TinyPNG源压缩</strong>。界面上方则显示了压缩后大小、压缩比例、压缩状态等。压缩完成后，界面右下方将可选择<strong>覆盖源文件保存</strong>或者<strong>另存为</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A94.png" alt="" loading="lazy"></p>
+<h3 id="5微信公众号同步">5.微信公众号同步</h3>
+<p>为了传播效果，我们往往会将个人网站的文章同步在微信公众号发布，<strong>Markdown Nice</strong>这个产品则能大大提升我们同步的效率。复制我们在Gridea文章编辑器内撰写的内容，在Chrome浏览器中打开mdnice.com，把刚刚复制的内容粘贴至页面左边的操作栏中，此时右边会实时显示排版效果。在上方工具栏内我们可以选择不同的主题、格式等，确定之后点击右侧边栏的第一个图标，然后打开微信公众号粘贴发布即可。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/markdownnice.png" alt="" loading="lazy"></p>
+<h2 id="最后">最后</h2>
+<p>以上就是搭建个站的基本教学，祝愿大家可以更加自由地发表作品。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[北京闲逛指南（篇三）]]></title>
-        <id>https://sysuyep.github.io/post/bjxgzn3</id>
-        <link href="https://sysuyep.github.io/post/bjxgzn3">
+        <id>https://sysuyep.github.io/post/bjxgzn3/</id>
+        <link href="https://sysuyep.github.io/post/bjxgzn3/">
         </link>
         <updated>2019-11-23T16:24:50.000Z</updated>
         <content type="html"><![CDATA[<p>前两篇文章基本将二环内的大部分景点囊括进去了，但是北京还散落着众多可以一看的地方，本篇便简单介绍。</p>
@@ -25,10 +161,10 @@
 除了北京地区历史外，他们的临时特展也值得看，浏览时间建议小半天。<br>
 3、<a href="http://www.jb.mil.cn/">中国人民革命军事博物馆</a><br>
 场馆改造之后体验感非常好（除了休息区太少），藏品丰富、互动性强。有些展区入口在角落里，多走几步注意寻找。浏览时间建议半天，从地下一层开始往上逛吧。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190609163526_IMG_3540-01-01.jpeg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190609163526_IMG_3540-01-01.jpeg" alt="" loading="lazy"><br>
 4、铁道博物馆（东郊馆）<br>
 在东北五环外，摆放了各个年代的机车车辆。仅有几台机车可以入内参观，互动性和体验感都很一般。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190503_140223.jpg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190503_140223.jpg" alt="" loading="lazy"><br>
 5、<a href="http://www.cnfm.org.cn/">中国电影博物馆</a><br>
 近期刚修缮完毕，在铁道博物馆边上，顺带着一块儿看了吧。<br>
 6、<a href="http://www.1937china.com/">中国人民抗日战争纪念馆</a><br>
@@ -50,28 +186,28 @@
 冲着《我与地坛》这篇课文，也应该去浏览一下。公园不大，散落着一些古建筑，适合散步。<br>
 4、<a href="http://www.yuanmingyuanpark.cn/">圆明园</a><br>
 大部分人只涉足了西洋楼景区一小部分的地区，然而在园子西边散落着各种残破的遗迹也值得一看。人少、植被茂盛，春夏之交、秋冬之交适合前往。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190629_143659-02.jpeg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190629_143659-02.jpeg" alt="" loading="lazy"><br>
 5、八大胡同<br>
 曾经的烟花柳巷，但历史痕迹都已经荡然无存，如果一个人去溜达会非常无聊。<br>
 6、中华圣公会教堂、京师女子师范学堂<br>
 两个地方隔着不远，教堂改造后成为了书局，学堂所在地现在为鲁迅中学。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgIMG_3583.jpg" alt=""><br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgIMG_3612.jpg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgIMG_3583.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgIMG_3612.jpg" alt="" loading="lazy"><br>
 8、首钢工业遗址公园<br>
 原来首钢工厂所在地，巨大的废弃钢铁工厂看着着实壮观。但是里面还在改造，而且个人游客无法登上最高的塔，必须是团队预约参观，所以推荐度一般。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190501_182717-01.jpeg" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190501_182717-01.jpeg" alt="" loading="lazy"></p>
 <h2 id="提醒">提醒</h2>
 <p>在二环内闲逛的话，你在地图上会发现各种名人故居、会馆之类的，但是很多都是仅有一个名字而已，要么被挪作他用无法参观，要么是普通民居残败不堪，所以不必费心思去寻找了。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[北京闲逛指南（篇二）]]></title>
-        <id>https://sysuyep.github.io/post/bjxgzn2</id>
-        <link href="https://sysuyep.github.io/post/bjxgzn2">
+        <id>https://sysuyep.github.io/post/bjxgzn2/</id>
+        <link href="https://sysuyep.github.io/post/bjxgzn2/">
         </link>
         <updated>2019-11-23T12:30:53.000Z</updated>
         <content type="html"><![CDATA[<p>篇一虽然只写了两条线路，但也费去了不少时间。按照那样的写法继续下去估计会把自己弄崩溃，所以决定删繁就简，本篇就把剩下6条线路简要描述一下。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgmap.jpg" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgmap.jpg" alt="" loading="lazy"></p>
 <h2 id="线路三雍和宫地铁站鼓楼大街">线路三：雍和宫地铁站&gt;&gt;&gt;鼓楼大街</h2>
 <p>这条线路比较迂回，从雍和宫地铁站B口出来向右拐进藏经馆胡同之后，便开始了今日的旅程。期间会经过柏林寺（不开放）、后永康胡同、「通教寺」（尼寺）、<a href="http://www.ocmuseum.cn">中国华侨历史博物馆</a>、北新桥头条、交道口东大街、鼓楼、钟楼、豆腐池胡同、宝钞胡同，最终在鼓楼大街站搭车回家。<br>
 这段路程最好是上午出发，这样中午便可在北新桥寻一家中意的餐馆吃饭。随后溜达至鼓楼，下午还能看一场击鼓表演。然后在附近胡同转悠，说不定能发现一些带来惊喜的小店。如果不想过早回去，可以去离着不远的<a href="https://weibo.com/gulouxijuchang?profile_ftype=1&amp;is_all=1#_0">鼓楼西剧场</a>，看一场话剧表演。</p>
@@ -79,8 +215,8 @@
 <p>这条线路文化色彩比较浓厚。从阜成门地铁站B口出来后，前半段我们将经过<a href="http://www.luxunmuseum.com.cn/">北京鲁迅博物馆</a>、妙应白塔寺、历代帝王庙（正在修缮，预计2020年开放）、弘慈广济寺、<a href="http://www.gmc.org.cn/">中国地质博物馆</a>、红楼公共藏书楼，后半段将路过辅仁大学旧址、<a href="http://www.pgm.org.cn/">恭王府</a>、后海片区。<br>
 这条线路除了恭王府和后海之外，其他景点人群都很少，不必担心喧闹。从前半段至后半段中间需走较长的路程，建议抛弃主街，从两侧的小巷胡同穿梭前行，不仅安静而且有机会偶遇一些小店。比如鲁迅博物馆边上的宫门口二条胡同中，就隐藏着一家精致的咖啡馆。<br>
 地质博物馆和红楼公共藏书馆可根据情况决定是否参观。藏书馆是一个城市更新项目，由旧影院改为社区图书馆，可以简单参观一下。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190406135625_IMG_2033_polarr.jpg" alt=""><br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190406160128_IMG_2082_polarr.jpg" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190406135625_IMG_2033_polarr.jpg" alt="" loading="lazy"><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190406160128_IMG_2082_polarr.jpg" alt="" loading="lazy"></p>
 <h2 id="线路五南锣鼓巷地铁站北海公园">线路五：南锣鼓巷地铁站&gt;&gt;&gt;北海公园</h2>
 <p>这条线路虽然始于南锣鼓巷地铁站，但是我们不会挤进这条毫无乐趣的“著名旅游景点”，而且反向行之。从A口出来后，往南边的东板桥街方向行走。随后我们将经过纳福胡同、嵩祝寺及智珠寺（古建更新项目）、沙滩北街，拐向五四大街后，我们重点参观北京新文化运动纪念馆、中国美术馆。之后往景山前街方向走，从北海公园南门进去，绕湖溜达一圈。<br>
 这段线路不算太长，可在北海公园惬意的划船。哼一首《让我们荡起双桨》，那句“海面倒映着美丽的白塔，四周环绕着绿树红墙”所描绘的景色尽在你眼前。</p>
@@ -90,7 +226,7 @@
 <h2 id="线路七和平门东四">线路七：和平门&gt;&gt;&gt;东四</h2>
 <p>这条线路距离相对较长，无需单次走完。从和平门地铁站出来后，我们会经过琉璃厂古文化街、杨梅竹斜街、大栅栏商业街、西打磨厂街、台基厂大街、王府井大街、东西四大街。<br>
 这条路线前段是代表北京特色的旧胡同，中段是具有深刻历史印记的旧租界区，后段则是繁华的现代商业区。一天的时间，我们便可穿越三个时代，感受时间流淌的痕迹。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img1542792184713.jpg" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img1542792184713.jpg" alt="" loading="lazy"></p>
 <h2 id="线路八前门天安门东">线路八：前门&gt;&gt;&gt;天安门东</h2>
 <p>相比上条路线，这条更加闲适。从前门地铁站C口出来后，直奔<a href="http://beijingfun.com.cn/">北京坊</a>，PageOne书店、星巴克甄选店、无印良品酒店等都坐落于此。吃饱喝足之后，穿过鲜鱼口街来到长巷头条、芦草园胡同这边区域，这儿有着北京胡同内比较不错绿化景观。刘若英夫妇经营经营的「春风习习杂志图书馆」也坐落于此。在附近的胡同悠哉溜达之后，往北向正义路、东郊民巷附近前行。这附近遍布国家机关，如公安部、最高法院等，独具特色的<a href="https://gaj.beijing.gov.cn/jcbwg/museum/init.do">北京警察博物馆</a>也在这儿。<br>
 最后我们穿过长安街来到北京市劳动人民文化宫（太庙），如果你想找个人少的地方拍红墙黄瓦，这儿绝对是不二之选。除了拍婚纱的新人之外，鲜有游人来这儿闲逛。坐在汉白玉的石阶上，看着影楼摄影师按着套路指导结婚男女摆着姿势，倒别有一番趣味。若你还想更清静点，那么径直穿过建筑群，来到护城河边上，找一个长椅静静坐着即可。一边看着对岸拥挤的人群，一边等待夕阳西下，时间大概就是在这样的对比中变慢了起来。</p>
@@ -98,27 +234,27 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[北京闲逛指南（篇一）]]></title>
-        <id>https://sysuyep.github.io/post/bjxgzn1</id>
-        <link href="https://sysuyep.github.io/post/bjxgzn1">
+        <id>https://sysuyep.github.io/post/bjxgzn1/</id>
+        <link href="https://sysuyep.github.io/post/bjxgzn1/">
         </link>
         <updated>2019-11-23T10:16:02.000Z</updated>
         <content type="html"><![CDATA[<p>春夏之交、秋冬之交大概是一年之中最适宜在北京城内闲逛的时节。没有烈日、寒风、雾霾的相伴，你只需一双腿、一个背包、一台相机、一副耳机，就可以尽情在这旧城与新城、古代与现代、清幽与喧闹之间肆意穿梭。<br>
 北京生活了三年的我，一个人走遍了二环内一多半的区域，中间虽枯燥但也乐趣横生。由此想着将以往涉足的区域和路线经过整理优化，制作出一份「北京闲逛指南」。那些未在线路中出现但也值得体验的其他景点，将在文章后面单独介绍。<br>
 另外需要指出的是，每条线路距离都比较长，除非你是像我一样的暴走单身狗，否则大可不必一天走完。建议将每条线路拆成多段，这样体验更加轻松自在。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgmap.jpg" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/imgmap.jpg" alt="" loading="lazy"></p>
 <h2 id="线路一积水潭天安门西">线路一：积水潭&gt;&gt;&gt;天安门西</h2>
 <p>从积水潭地铁站D口出来后，沿着新街口大街向南步行三四百米，朝右手方向望去将看到「<a href="https://beihongchinaarts.com/">徐悲鸿纪念馆</a>」。该馆经过9年的修缮，于2019年9月重新开放，参观信息可参考该馆微信公众号。<br>
 继续向南，在这条特别像家乡县城街道的两侧，树立着各式门脸不大、招牌各异的小店。在这里你能看见真维斯、贵人鸟、新百伦、以纯，还有外贸鞋服、清仓甩卖，俨然与北京各大商场的富丽堂皇形成鲜明对比。<br>
 大约走过九百米，我们将身子往左一侧，就进入了一条名字很好听的胡同——「百花深处」。胡同内最值得提起的大概就是「<a href="http://www.baihuastudio.com/">百花录音棚</a>」，黑豹、唐朝、那英、陈升等等歌手乐队都曾与它产生联系。<br>
 在胡同内的闲逛不必拘束，不必在意是否走对了路，大致方向正确即可。到了胡同岔路口随心一拐，穿越小巷朝着护国寺街道奔去。主街两侧的小吃对于我而言毫无吸引力，速速穿过人群来到护国寺街和德胜门内大街的交汇处，「<a href="http://www.meilanfang.com.cn/">梅兰芳纪念馆</a>」便位于此处。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190407174709_IMG_2336_polarr.jpg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img20190407174709_IMG_2336_polarr.jpg" alt="" loading="lazy"><br>
 了解大师的生平之后，慢慢将脚步移向西什库大街。这一段路程稍显无趣，但听个曲聊个天倒也不会烦闷。走上大约1.3公里，路过了北京四中、北大医院，很快就能看见「西什库天主堂」。参观的同时打开手机查询与之相关的历史故事，更能清楚感受到它百余年的历史痕迹。<br>
 出了教堂之后建议选择府右街继续向南行走，身边就是全国政治中心，加之站岗的武警、巡逻的警察，一切都让空气似乎变得严肃起来。不过要是在脑海中产生一点丰富的想象，则会让气氛稍微活跃。<br>
 走过两公里的街道之后，长安街便出现在我们的脚下。宽阔的大街是相当无趣的，而这时天也快黑了下来，那么就让我们选择陶冶情操，去「<a href="http://www.chncpa.org/">国家大剧院</a>」听一场音乐会来结束今天的行程吧。</p>
 <h2 id="路线二安定门什刹海">路线二：安定门&gt;&gt;&gt;什刹海</h2>
 <p>从安定门地铁站B口出来之后向南走过环形高架，此时有两个选择：一是可以直接左拐走进五道营胡同逛那些精致的小店；二是稍微绕一下，继续往南走三百多米转到国子监街，两侧有几家精品家居店可以小逛一会儿。国子监街前行大约280米，走进左手边那条箭厂胡同，里面藏着一些小馆子，若是有兴趣可以尝试一下。<br>
 走出小巷便来到了著名的「五道营胡同」，沿街两侧分布着各式适合拍照的小店，可以随意参观但不建议花费太多时间，因为这些精致的店看多了容易审美疲劳。出了胡同口向右转到大街上，接下来三个景点才是我们今天的重点——「<a href="http://www.yonghegong.cn/">雍和宫</a>」「<a href="http://www.kmgzj.com/">孔庙和国子监</a>」。<br>
-<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img1550408587593.jpg" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/sysuyep/ImageHosting/img1550408587593.jpg" alt="" loading="lazy"><br>
 即便不信佛，雍和宫内精美的建筑、神态各异的佛像以及万福阁内高达18米的弥勒佛站像都值得花点时间欣赏。出了佛门，让我们来了解下儒家。孔庙和国子监是曾经帝国的最高学府和皇帝祭孔场所，“左庙右学”的规制和198座元、明、清三代进士题名碑，都显示着儒学和科举曾经的辉煌。<br>
 出了帝国学府大门，让我们穿过一条南北走向的小巷，之后沿着方家胡同、分司厅胡同向西闲逛。接下来可以选择走小经厂胡同或者北锣鼓巷，两条小街都可以让我们到达「南锣鼓巷」片区。<br>
 不要被南锣鼓巷主街的人潮涌动给吓到，其实只要拐进主街两侧的小胡同，喧闹声便会戛然而止。蒋介石行辕、茅盾故居、婉容故居、冯国璋旧宅、中央戏剧学院、蓬蒿剧场等则多分布于主街两侧的胡同内，可以以「S」型方式穿梭于巷子之间细细搜寻。待探索完毕，这一天也快落幕，选择附近一家小馆子吃完饭后，便可去南锣鼓巷站或者什刹海站搭乘地铁回去。</p>

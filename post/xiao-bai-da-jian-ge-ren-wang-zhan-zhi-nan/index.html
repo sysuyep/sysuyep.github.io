@@ -1,0 +1,319 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GitHub搭建个人网站教程 | 小吴同学的绿洲</title>
+<meta name="description" content="步履不停" />
+<link rel="shortcut icon" href="https://sysuyep.github.io/favicon.ico?v=1584945723884">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sysuyep.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153154556-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153154556-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sysuyep.github.io">
+  <img class="avatar" src="https://sysuyep.github.io/images/avatar.png?v=1584945723884" alt="">
+  </a>
+  <h1 class="site-title">
+    小吴同学的绿洲
+  </h1>
+  <p class="site-description">
+    步履不停
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+        <a href="https://weibo.com/wuzeqian " target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              GitHub搭建个人网站教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-24
+              </span>
+              <span>
+                11 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://gitee.com/sysuyep/websiteimg/raw/master/img/kobuagency.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>在互联网愈加封闭的环境下以及处处<s>404</s>的时代，搭建个人网站成为了一个相对自由的选择，一个微弱的抗议。</p>
+<p>为什么选择GitHub？一是免费，无需增加服务器的费用支出；二是无需备案。本文将完整介绍利用GitHub搭建个人网站的流程，包括域名购买、GitHub Pages设置、域名解析、博客客户端设置、文本编辑器使用、图床设置和其他优化工具。</p>
+<p>我们将使用的软件、工具或者网站包括：NameSilo、GitHub、DNSPod、Gridea、Markdown、jsDelivr、PicGo、Markdown Nice等。整个过程几乎是“描红”式操作，当然第一次上手难免会遇到各种意外问题，如果本文没有给你解答，那么请善用搜索引擎。</p>
+</blockquote>
+<!-- more -->
+<h2 id="引子一个比喻">引子：一个比喻</h2>
+<p>如果我们将搭建网站比喻为房子，域名就相当于门牌地址，GitHub Pages就是承载房子的地皮和地基，有了这两样我们才能用钢筋水泥建设和装修房子（使用Gridea之类的博客框架完善网站）。域名解析就是引路人，相当于将带有文字的地址与纯数字的经纬度对应，它将域名（比如www.abc.com）转换为IP地址（比如114.114.114.114），以便让计算机用他们能够理解的语言帮你找到正确的网站。文本编辑器、图床等内容，则是为了让你能够更加高效、便利地创造内容。</p>
+<h2 id="一-域名购买及域名服务转移">一、 域名购买及域名服务转移</h2>
+<p>如果用GitHub搭建个人网站，其实并不一定需要买域名，但是为了流程完整性，还是将买域名作为建站的第一步。域名注册商有很多，比如GoDaddy、Namecheap、name.com等等，本文以NameSilo为例，介绍一下购买流程。<br>
+Step 1:<br>
+注册登录之后，在搜索栏中输入你想购买的域名，然后点击搜索。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B01.png" alt="" loading="lazy"><br>
+Step 2：<br>
+查看可购买的域名，如果显示橙色“Registered”，则表示该域名已被别人占有，绿色为可购买。勾选想要的域名后点击“register checked domains”。有些域名会显示两个价格，一般便宜的价格都是指第一年的费用，而有删除线的价格（比如<s>＄16.99</s>）则是后续续费的价格，所以不要看第一年哪个便宜就买哪个。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B02.png" alt="" loading="lazy"><br>
+Step 3:<br>
+确认订单。如果决定长期使用，Auto-Renew（自动续费）可以选择 Yes。Set all years选择注册时长，但是如果是按促销价购买，只能选择一年。Privacy Setting中建议选择免费赠送的WHOIS隐私保护。然后点击支付金额下方的<strong>Continue</strong>进入下一步。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B03.png" alt="" loading="lazy"><br>
+Step 4：<br>
+选择支付宝或者其他支付方式。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B04.png" alt="" loading="lazy"><br>
+Step 5:<br>
+为了提升域名解析速度，我们接下来要将NameSilo默认的域名服务器转移至DNSPOD（腾讯云）。首先在dnspod.cn注册账户，然后进入控制台管理界面。点击<strong>DNS管理</strong>下的<strong>我的域名</strong>，然后选择<strong>添加域名</strong>。填入我们在NameSilo购买的域名，点击确认。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D5.png" alt="" loading="lazy"><br>
+Step 6:<br>
+点击生成的域名进入跳转界面，我们可以在上方发现一条提醒：“请在域名注册商处将 DNS 服务器修改为……”，复制文本中提到的<mark>f1g1ns1.dnspod.net</mark>和<mark>f1g1ns2.dnspod.net</mark>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B06.png" alt="" loading="lazy"><br>
+Step 7:<br>
+然后我们回到NameSilo进入<strong>My Account</strong>,点击右上角的<strong>Manage My Domains</strong>，勾选我们购买的域名，然后点击选项栏中的<strong>Change Nameservers</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D7.png" alt="" loading="lazy"><br>
+进入跳转页面后，将刚刚在DNSPOD复制的两个地址分别填入<strong>NameServer 1</strong>和<strong>NameServer 2</strong>中。删除其他记录，然后点击<strong>SUBMIT</strong>。然后等待DNS服务器刷新（最多72小时，一般十几分钟也可完成），等待的这段时间内我们先去设置GitHub Pages。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B07-2.png" alt="" loading="lazy"></p>
+<h2 id="二-github-pages-设置">二、Github Pages 设置</h2>
+<p>Step 1:<br>
+注册GitHub个人账户，进入个人主页界面后，点击左边栏上方的<strong>New</strong>，新建一个Repository（仓库）。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub1.png" alt="" loading="lazy"><br>
+Step 2:<br>
+跳转页面之后，在<strong>Repository name</strong>处填写域名，格式是<mark>username.github.io</mark>，username就是你注册GitHub的用户名。<strong>Description</strong>随便填，选择<strong>Public</strong>，勾选<strong>Initialize this repository with a README</strong>，点击下方的<strong>Create repository</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/snipaste_20200323_132610.png" alt="" loading="lazy"><br>
+Step 3:<br>
+跳转页面之后，点击<strong>Settings</strong>，接着往下滚动页面找到<strong>GitHub Pages</strong>。然后点击<strong>Choose a theme</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3-2.png" alt="" loading="lazy"><br>
+跳转页面后随便选择一个模板（后面我们会用Gridea来搭建更加美观的网站）。这时一个最简陋的网站就建好了，GitHub自动跳转回Settings界面，这时我们看GitHub Pages下面会显示<mark>Your site is published at username.github.io</mark>。这时你在浏览器输入这个域名，就能 看到你的网站雏形啦。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/GitHub3-3.png" alt="" loading="lazy"></p>
+<h2 id="三-域名解析">三、域名解析</h2>
+<p>Step 1:<br>
+设置完Github Pages后，就需要让我们的域名地址都能够被他人正常访问。首先打开电脑本地的Git Bash或者cmd命令行控制台，输入<mark>ping username.github.io</mark>后回车（username即你的GitHub用户名），复制返回结果中的IP地址。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%901.png" alt="" loading="lazy"><br>
+Step 2：<br>
+进入DNSPOD的控制台，点击<strong>我的域名</strong>中此前设置的域名，跳转页面后点击<strong>添加记录</strong>。这里我们要填写两条，以保证在输入域名时无论是否添加www，人们都可以访问你的网站。<br>
+第一条的主机记录填==@== ，记录类型选择<mark>A</mark>，线路类型默认，记录值填写上一步获得的IP地址。<br>
+第二条的主机记录填<mark>WWW</mark>，记录类型选择<mark>CNAME</mark>，线路类型默认，记录值填写<mark>username.github.io</mark>（username为你的GitHub用户名），点击确认。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%902.png" alt="" loading="lazy"><br>
+Step 3：<br>
+打开GitHub，点击之前建立的仓库（username.github.io），然后选择<strong>Settings</strong> ,下拉到<strong>GitHub Pages</strong>版块，在<strong>Custom Domain</strong>中填入你在NameSilo上购买的域名，然后点击保存。经过一定时间的等待（我也不知道多久），GitHub Pages将显示<mark>Your site is published at abc.com</mark> （abc.com指代你购买的个人域名）。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%903.png" alt="" loading="lazy"></p>
+<h2 id="四-使用gridea构建网站">四、使用Gridea构建网站</h2>
+<blockquote>
+<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
+</blockquote>
+<p>Step 1：<br>
+进入官网gridea.dev下载客户端，在等待下载安装的过程中我们需要先去GitHub设置一个Token。点击GitHub右上角的头像，再点击<strong>Settings</strong>，在左侧边栏选择最下方的<strong>Developer settings</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea2.png" alt="" loading="lazy"><br>
+跳转界面后，点击<strong>Personal access tokens</strong>，然后点击右上角的<strong>Generate new token</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea5.png" alt="" loading="lazy"><br>
+Step 2:<br>
+<strong>Note</strong>处的内容可以随便填，比如写Personal Website。在其下方面有很长一堆东西，你只需勾选第一个<strong>repo</strong>即可，然后拉到页面最下方点击<strong>Generate token</strong>。跳转页面之后，复制那一长串字符。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea4.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/gridea5.png" alt="" loading="lazy"><br>
+Step 3:<br>
+打开安装完成的Gridea客户端，点击左边栏的<strong>远程</strong>。</p>
+<ul>
+<li><strong>平台</strong>选择GitHub Pages。</li>
+<li><strong>域名</strong>填写你的GitHub域名（username.github.io）。</li>
+<li><strong>仓库名称</strong>即你在GitHub上建立的仓库名称，一般为username.github.io。</li>
+<li><strong>分支</strong>填master。</li>
+<li><strong>仓库用户名</strong>为你的GitHub用户名。</li>
+<li><strong>邮箱</strong>一般填你注册GitHub时的邮箱。</li>
+<li><strong>令牌</strong>填写我们上一步复制的Token。</li>
+<li><strong>CNAME</strong>填写你在NaseSilo上购买的自定义域名。<br>
+填写完之后点击<strong>检测远程连接</strong>，如果提示 「远程连接成功」则证明设置成功，点击<strong>保存</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/Gridea6.png" alt="" loading="lazy"><br>
+Step 4：<br>
+点击侧边栏<strong>主题</strong>，我们可以对网站界面进行配置。在<strong>选择主题</strong>中，可以点击右侧<mark>∨</mark>查看更多主题，在线主题市场也有更多主题可以选择。网站名称等细节配置请自行摸索，或者参考<a href="https://gridea.dev/docs/">官方文档</a>。全部设置完毕之后点击左下方的<strong>同步</strong>，就可将新网站推向全世界了。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/Gridea7.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200323142750.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="五-优化及效率提升">五、优化及效率提升</h2>
+<h3 id="1写作">1.写作</h3>
+<p>Gridea文章编辑器使用了<strong>Markdown</strong>语言，这也是我推荐你熟悉并使用的一种写作方式。Markdown是一种轻量级标记语言，用语法来代替常见的排版格式，能够让你专注内容而非排版。并且借助一些工具，你的文章无需耗费过大力气，就能高效地迁移至微信公众号等各类平台中。除了Gridea自带的文章编辑器，PC上你还可以使用<strong>Typora</strong>作为日常写作工具。</p>
+<h3 id="2图床">2.图床</h3>
+<p>图床是专门存储图片的网络服务器，将图片上传至图床即可通过外链访问，配合Markdown语法<code>![](图床链接地址)</code> 我们可以很方便的在文内插入图片。将文章搬至其他平台时，也无需重复上传图片，极大节约了时间。</p>
+<h3 id="3picgo图片上传及管理工具">3.PicGo：图片上传及管理工具</h3>
+<p>PicGo支持了多种图床，包括七牛图床、腾讯云COS、又拍云、GitHub、SM.MS、阿里云OSS、Imgur等，通过其他开发者制作的插件，PicGo还能支持Gitee等其他图床。这里以GitHub为例，介绍一下PicGo的使用技巧。<br>
+首先我们按照前文的方式，在GitHub新建一个Repository并重新生成一个Token。然后打开PicGo客户端，在左边栏图床设置中点击<strong>GitHub图床</strong>。</p>
+<ul>
+<li><strong>设定仓库名</strong>的格式是<mark>GitHub用户名/刚刚新建的仓库名</mark>，例如sysuyep/ImageHosting。</li>
+<li><strong>设定分支名</strong>填写master。</li>
+<li><strong>设定Token</strong>填写你刚刚获取的Token。</li>
+<li><strong>存储路径</strong>是指你计划把图片放在仓库什么位置，一般可填img/。</li>
+<li><strong>自定义域名</strong>这里我们可以用<mark>jsDelivr</mark>进行配置，以便增加访问GitHub图床的速度。可以设置为<mark>https://cdn.jsdelivr.net/gh/用户名/仓库名</mark>，设置完成后点击确定。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo1.png" alt="" loading="lazy"><br>
+在上传区我们将链接格式选择为<strong>Markdown</strong>，选择一张图片上传完成之后，你就可以将该图片外链以Markdown的格式复制粘贴至文本内。比如：<br>
+<code>![](https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo2.png)</code><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/picgo2.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="4图片压缩">4.图片压缩</h3>
+<p>图片过大不仅占用GitHub仓库空间而且影响访问的加载速度，因此对图片进行合理的压缩是必要的。在线图片压缩处理网站已经有很多了，比如<a href="https://docsmall.com/">docsmall</a>、<a href="https://tinypng.com/">Tinypng</a>等。<br>
+本文主要介绍一种本地处理工具<strong>utools</strong>，准确地说它是一个工具集合产品。在[官网]（https://u.tools/index.html）下载安装后打开插件管理，可以发现其分门别类了不同功能的插件，大家可以根据自己需要安装，这里我以<strong>压缩图片</strong>为例介绍一下其使用方法。首先在左边栏点击<strong>图片</strong>，点击图片压缩右侧的图标下载，安装之后我们可以在<strong>已安装</strong>中查看插件的使用介绍。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A91.png" alt="" loading="lazy"><br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A92.png" alt="" loading="lazy"><br>
+这时我们只要使用快捷键<mark>Alt+Space</mark>就可快速唤出操作框，将想要压缩的图片拖进操作框，在弹出插件列表中选中<strong>图片压缩</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A93.png" alt="" loading="lazy"><br>
+在跳转界面中，我们可以在左下方选择<strong>本地压缩</strong>或者<strong>通过TinyPNG源压缩</strong>。界面上方则显示了压缩后大小、压缩比例、压缩状态等。压缩完成后，界面右下方将可选择<strong>覆盖源文件保存</strong>或者<strong>另存为</strong>。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A94.png" alt="" loading="lazy"></p>
+<h3 id="5微信公众号同步">5.微信公众号同步</h3>
+<p>为了传播效果，我们往往会将个人网站的文章同步在微信公众号发布，<strong>Markdown Nice</strong>这个产品则能大大提升我们同步的效率。复制我们在Gridea文章编辑器内撰写的内容，在Chrome浏览器中打开mdnice.com，把刚刚复制的内容粘贴至页面左边的操作栏中，此时右边会实时显示排版效果。在上方工具栏内我们可以选择不同的主题、格式等，确定之后点击右侧边栏的第一个图标，然后打开微信公众号粘贴发布即可。<br>
+<img src="https://gitee.com/sysuyep/websiteimg/raw/master/img/markdownnice.png" alt="" loading="lazy"></p>
+<h2 id="最后">最后</h2>
+<p>以上就是搭建个站的基本教学，祝愿大家可以更加自由地发表作品。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%BC%95%E5%AD%90%E4%B8%80%E4%B8%AA%E6%AF%94%E5%96%BB">引子：一个比喻</a></li>
+<li><a href="#%E4%B8%80-%E5%9F%9F%E5%90%8D%E8%B4%AD%E4%B9%B0%E5%8F%8A%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E8%BD%AC%E7%A7%BB">一、 域名购买及域名服务转移</a></li>
+<li><a href="#%E4%BA%8C-github-pages-%E8%AE%BE%E7%BD%AE">二、Github Pages 设置</a></li>
+<li><a href="#%E4%B8%89-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90">三、域名解析</a></li>
+<li><a href="#%E5%9B%9B-%E4%BD%BF%E7%94%A8gridea%E6%9E%84%E5%BB%BA%E7%BD%91%E7%AB%99">四、使用Gridea构建网站</a></li>
+<li><a href="#%E4%BA%94-%E4%BC%98%E5%8C%96%E5%8F%8A%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87">五、优化及效率提升</a>
+<ul>
+<li><a href="#1%E5%86%99%E4%BD%9C">1.写作</a></li>
+<li><a href="#2%E5%9B%BE%E5%BA%8A">2.图床</a></li>
+<li><a href="#3picgo%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%8F%8A%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7">3.PicGo：图片上传及管理工具</a></li>
+<li><a href="#4%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9">4.图片压缩</a></li>
+<li><a href="#5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%90%8C%E6%AD%A5">5.微信公众号同步</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%90%8E">最后</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sysuyep.github.io/post/bjxgzn3/">
+              <h3 class="post-title">
+                北京闲逛指南（篇三）
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://sysuyep.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
