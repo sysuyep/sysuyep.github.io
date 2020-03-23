@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sysuyep.github.io</id>
     <title>小吴同学的绿洲</title>
-    <updated>2020-03-23T06:42:06.791Z</updated>
+    <updated>2020-03-23T06:43:04.038Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sysuyep.github.io"/>
     <link rel="self" href="https://sysuyep.github.io/atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://sysuyep.github.io/post/xiao-bai-da-jian-ge-ren-wang-zhan-zhi-nan/</id>
         <link href="https://sysuyep.github.io/post/xiao-bai-da-jian-ge-ren-wang-zhan-zhi-nan/">
         </link>
-        <updated>2019-11-23T18:18:41.000Z</updated>
+        <updated>2020-03-23T06:42:28.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
 <p>在互联网愈加封闭的环境下以及处处<s>404</s>的时代，搭建个人网站成为了一个相对自由的选择，一个微弱的抗议。</p>
 <p>为什么选择GitHub？一是免费，无需增加服务器的费用支出；二是无需备案。本文将完整介绍利用GitHub搭建个人网站的流程，包括域名购买、GitHub Pages设置、域名解析、博客客户端设置、文本编辑器使用、图床设置和其他优化工具。</p>
